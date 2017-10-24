@@ -12,7 +12,7 @@ all: build/main.pdf
 
 # hier Python-Skripte:
 build/plot.pdf: plot.py matplotlibrc header-matplotlib.tex | build
-	TEXINPUTS="$(call translate,$(pwd):)" python plot.py
+	TEXINPUTS="$(call translate,$(pwd):)" python content/python/plot.py
 
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
 build/main.pdf: build/plot.pdf
