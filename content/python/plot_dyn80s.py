@@ -4,7 +4,7 @@ import scipy.constants as const
 
 t, T1,T2,T5,T6 = np.genfromtxt('../values/messungdyn80s_val.txt',unpack=True)
 
-t /= 2
+t *= 2
 T1 = const.convert_temperature(T1,'c','K')
 T2 = const.convert_temperature(T2,'c','K')
 T5 = const.convert_temperature(T5,'c','K')
