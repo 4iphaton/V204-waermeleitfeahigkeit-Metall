@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import scipy.constants as const
 
-t, T1,T2,T3,T4,T5,T6,T7,T8 = np.genfromtxt('../values/messungdyn80s_val.txt',unpack=True)
+t, T1,T2,T5,T6 = np.genfromtxt('../values/messungdyn80s_val.txt',unpack=True)
 
 t /= 2
 T1 = const.convert_temperature(T1,'c','K')
