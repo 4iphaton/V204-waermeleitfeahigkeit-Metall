@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import scipy.constants as const
 
-t, T1,T2,T5,T6 = np.genfromtxt('../values/messungdyn80s_val.txt',unpack=True)
+t, T1,T2,T5,T6 = np.genfromtxt('content/values/messungdyn80s_val.txt',unpack=True)
 
 t *= 2
 T1 = const.convert_temperature(T1,'c','K')
@@ -26,5 +26,5 @@ plt.ylabel('T/K')
 plt.legend(loc="best")
 plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
 # in matplotlibrc leider (noch) nicht möglich
-plt.show()
+plt.savefig('build/dyn80.pdf')
 # plt.savefig('build/plot.pdf')
