@@ -13,12 +13,14 @@ all: build/main.pdf
 # hier Python-Skripte:
 build/stat.pdf: content/python/plot_statisch.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS="$(call translate,$(pwd):)" python content/python/plot_statisch.py
+build/statdif.pdf: content/python/plot_statdif.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS="$(call translate,$(pwd):)" python content/python/plot_statdif.py
 build/dyn80.pdf: content/python/plot_dyn80s.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS="$(call translate,$(pwd):)" python content/python/plot_dyn80s.py
 build/dyn200.pdf: content/python/plot_dyn200.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS="$(call translate,$(pwd):)" python content/python/plot_dyn200.py
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-build/main.pdf: build/stat.pdf build/dyn80.pdf build/dyn200.pdf
+build/main.pdf: build/stat.pdf build/dyn80.pdf build/dyn200.pdf build/statdif.pdf
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS="$(call translate,build:)" \

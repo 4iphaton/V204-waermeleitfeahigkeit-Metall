@@ -1,10 +1,106 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+\subsection{Auswetrung der statischen Messung}
+\label{sec:astat}
+
 \begin{figure}
   \centering
   \includegraphics{build/stat.pdf}
+  \caption{Die Temperaturverläufe $T1$ und $T4$ und $T5$ und $T8$.}
+  \label{fig:plotstat}
+\end{figure}
+
+In \ref{fig:plotstat} sind die Temperaturverläufe der
+der nicht geheitzten Enden der Metalle zu sehen.
+$T1$ und $T4$ stellen die Temperaturverläufe des dünnen und des
+dicken Messingstabes dar. Es ist klar zu sehen das sich die
+Temperatur beim dicken Messingstab $T1$ besser ausbreitet als
+beim dünnen $T4$, da hier, wie zu erwarten, ein höherer Wärmestrom
+auftreten kann. Für Aluminium $T5$ und Edelstahl $T8$ ist zu erkennen,
+dass Aluminium die Wärme wesentlich besser leiten kann.
+Insgesamt lässt sich sagen, dass die Wärmeleitfähigkeit
+von dem Material abhängig ist und mit zunehmendem Durchmesser
+steigt.
+Nach 600s haben die Metalle folgende Temperaturen erreicht
+\begin{align*}
+  T_\text{Messing,dick} &= \SI{45,81}{\celsius}	& T_\text{Messing,dünn} &= \SI{44,08}{\celsius}\\
+  T_\text{Aluminium} &= \SI{49,44}{\celsius}	& T_\text{Edelstahl} &= \SI{36,04}{\celsius}
+\end{align*}
+
+Wie oben zu erkennen ist, hat das Aluminium die höchste
+Wärmeleitfähigkeit, der Edelstahl die niedrigste.
+
+\begin{table}
+  \centering
+  \caption{Messwerte für $\increment T$.}
+  \label{tab:dT}
+  \sisetup{table-format=1.2}
+  \begin{tabular}{S[table-format=3.0]SSSS}
+    \toprule
+    {$t$}&{$\increment T_\text{Messing,dick}$}&{$\increment T_\text{Messing,dünn}$}&{$\increment T_\text{Aluminium}$}&{$\increment T_\text{Edelstahl}$}\\
+    \si{\second} & \si{\kelvin} & \si{\kelvin} & \si{\kelvin} & \si{\kelvin}\\
+    \midrule
+    100 & 4,53 & 4,94 & 2,98 & 8,16\\
+    200 & 3,56 & 3,73 & 1,93 & 9,38\\
+    300 & 3,07 & 3,28 & 1,62 & 9,27\\
+    400 & 2,84 & 3,13 & 1,52 & 9,02\\
+    500 & 2,73 & 3,05 & 1,47 & 8,88\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Aus \eqref{eqn:dQ} und den Werten aus \ref{tab:dT} ergeben sich
+mit dem Abstand der Sensoren $\increment x= $ \SI{0,0303}{\meter}
+die Wärmeströme
+
+\begin{table}
+  \centering
+  \caption{Der Wärmestrom.}
+  \label{tab:dQ}
+  \sisetup{table-format=2.2}
+  \begin{tabular}{S[table-format=3.0]SSSS}
+    \toprule
+    {$t$} & $\frac{\increment Q_\text{Messing,dick}}{\increment t}$ & $\frac{\increment Q_\text{Messing,dünn}}{\increment t}$
+     & $\frac{\increment Q_\text{Aluminium}}{\increment t}$ & $\frac{\increment Q_\text{Edelstahl}}{\increment t}$\\
+    \si{\second} & \si{\joule\per\second} & \si{\joule\per\second} & \si{\joule\per\second} & \si{\joule\per\second}\\
+    \midrule
+    100 & -0,86 & -0,55 & -1,11 & -0,26\\
+    200 & -0,68 & -0,41 & -0,72 & -0,30\\
+    300 & -0,58 & -0,36 & -0,60 & -0,29\\
+    400 & -0,54 & -0,35 & -0,57 & -0,29\\
+    500 & -0,52 & -0,34 & -0,55 & -0,28\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{figure}
+  \includegraphics{build/statdif.pdf}
+  \caption{Die Temperaturdifferenzen $T2-T1$ und $T7-T8$}
+  \label{fig:plotdif}
+\end{figure}
+
+Beim Vergleich der Temperaturdifferenzen an den Messstellen
+von Messing und Edelstahl in \ref{fig:plotdif}, zeigt sich zunächst,
+dass die bei Messing auftretenden Differenzen deutlich geringer
+sind als die bei Edelstahl. Die Grundform beider Grafen ist dieselbe.
+In den ersten Sekunden wächst die Temperatudifferenz an, da zunächst
+nur die beheitzte Seite der Metallstäbe aufgewärmt wird, dann fällt sie
+wieder ab sobald der Wärmestrom die unbeheitzte Messstelle erreicht, wobei
+sie gegen einen festen Wert läuft. Dieser liegt bei Messing bei ca.
+\SI{3}{\kelvin} und bei Edelstahl bei ca. \SI{8}{\kelvin}. Eine weitere
+Auffälligkeit ist, dass der Graph von Messing eher und stärker
+abfällt als der von Edelstahl und somit eine stärker definierte Form hat.
+All diese Unteschiede lassen sich auf die höhere Wärmeleitfähigkeit
+von Messing zurückführen, durch welche die Wärme die 2. Messstelle
+schneller und effektiver erreicht.
+
+\subsection{Auswetrung der statischen Messung}
+\label{sec:astat}
+\begin{figure}
   \includegraphics{build/dyn80.pdf}
+\end{figure}
+\begin{figure}
   \includegraphics{build/dyn200.pdf}
   \caption{Plot.}
   \label{fig:plot}
