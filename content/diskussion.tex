@@ -1,6 +1,29 @@
 \section{Diskussion}
 \label{sec:Diskussion}
 
+\begin{table}
+  \centering
+  \caption{Abweichung von den Literarturwerten.}
+  \label{tab:perc}
+  \sisetup{table-format=3.2}
+  \begin{tabular}{SSSSSS}
+    \toprule
+    &&& \multicolumn{3}{c}{Abweichung}\\
+    \cmidrule(lr){4-6}
+    {$\kappa_\text{Messing}$} & {$\kappa_\text{Aluminium}$} & {$\kappa_\text{Edelstahl}$}
+    & {$\text{Messing}$} & {$\text{Aluminium}$} & {$\text{Edelstahl}$}\\
+    \si{\watt\per\meter\per\kelvin} & \si{\watt\per\meter\per\kelvin} & \si{\watt\per\meter\per\kelvin}
+    & \si{\percent} & \si{\percent} & \si{\percent}\\
+    \midrule
+    89,04 & 198,47 & 11,33 & 25,80 & 16,26 & 24,47 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
-\section{Messwerte}
-\label{sec:Messwerte}
+Die Abweichungen von bis zu 25,8\si{\percent} sind dadurch zu erklären, dass das System nicht optimal isoliert ist.
+Zudem gibt das Kühlelement zuviel Wärme nach außen und heitzt die Metalle teilweise
+mehr auf als das es sie abkühlt. Alles in allem  halten sich die Werte jedoch
+relativ gut an den Literaturwerten. Zum statischen Experiment \ref{sec:astat}
+ist noch zu erwähnen, dass bereits knapp nach 600\si{\second} die vorgegebenen
+maximalen Temperaturen überschritten werden, sodass die Referenzwerte statt
+bei 700\si{\second} bei 600\si{\second} genutzt werden müssen.
