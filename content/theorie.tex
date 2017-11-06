@@ -1,4 +1,142 @@
+\section{Zielführung}
+\label{sec:Zielführung}
+Das Ziel dieses Versuchs ist es die Ausbreitung von Wärme in einem dünnen
+und einem breiten Messingstab, Aluminium und Edelstahl zu untersuchen.
+
+
+
+
 \section{Theorie}
 \label{sec:Theorie}
+Bei Körpern die keine gleichmäßige Temperatur besitzen kommt es zum Transport
+von Wärme von der Stelle mit der höheren Temperatur zu der mit der niedrigeren.
+Es gibt drei Möglichkeiten dies zu beschreiben. Die Übertragung durch
+durch Wärmestrahlung, Wärmeleitung oder durch Teilchenströmung(Konvektion).
 
-\cite{sample}
+Im Folgenden wird der Wärmetransport per Wärmeleitung untersucht. Dies geschieht
+in den genannten Metallen durch frei bewegliche Elektronen und Phononen.
+
+\subsection{Wärmestrom durch Querschnittsfläche}
+In dem zu betrachtenden Metall wird die Wärmemenge Q, welche transportiert
+wird falls es eine Temperaturdifferenz gibt, gemäß
+\begin{equation}
+ \symup{d}\,Q = -\kappa A\frac{\partial T}{\partial x}\symup{d}\,t
+ \label{eqn:dQ}
+\end{equation}
+berechnet.
+Hierbei ist A die Querschnittsfläche, T die Temperatur und $\kappa$ die
+Wärmeleitfähigkeit des Materials. Hieraus lässt sich auch die Wärmestromdichte
+\begin{equation}
+  j_w = \frac{1}{A}\frac{\symup{d}\,Q}{\symup{d}\,t} = - \kappa
+  \frac{\partial T}{\partial x}
+  \label{eqn:jw}
+\end{equation}
+herleiten.
+
+Mit Verwendung der Kontinuitätsgleichung des Wärmestroms lässt sich
+dies zu
+\begin{equation}
+  \frac{\partial T}{\partial t} = \frac{\kappa}{\rho c}\frac{{\partial}^{2} T}
+  {\partial {x}^{2}}
+  \label{eqn:delT/delt}
+\end{equation}
+umformen.
+
+\subsection{Temperaturwelle}
+Durch periodisches erwärmen und abkühlen entsteht in einem langen Stab
+eine Temperaturwelle nach:
+\begin{equation}
+  T(x,t)= T_{max}\,exp\left(-\sqrt{\frac{\omega\rho c}{2\kappa}}\right)
+  \cos\left(\omega t - \sqrt{\frac{\omega\rho c}{2\kappa}}x\right)
+  \label{eqn:T(x,t)}
+\end{equation}
+Da es sich um eine Welle handelt wird die Phasengeschwindigkeit durch
+\begin{equation}
+  v= \frac{\omega}{k} = \sqrt{\frac{2\kappa\omega}{\rho c}}
+  \label{eqn:vpha}
+\end{equation}
+errechnet.
+
+Die Temperaturwelle ist eine gedämpfte Welle, wobei sich die Dämpfung
+durch das Vehältnis der Amplituden $A_{nah}$ zu $A_{fern}$ ergibt. Diese
+werden an den Messstellen $x_{nah}$ und $x_{fern}$ ausgelesen.
+Zudem werden die Winkelgeschwindigkeit
+\begin{equation}
+  \omega = \frac{2\pi}{T_{P}}
+  \label{eqn:omega}
+\end{equation}
+und die Phase
+\begin{equation}
+  \Phi = \frac{2\pi\increment t}{T_P}
+  \label{eqn:phi}
+\end{equation}
+zur Berechnung der Wärmeleitfähigkeit mit $T_P$
+als Periodendauer verwendet.
+Daraus ergibt sich die Wärmeleitfähigkeit
+\begin{equation}
+  \kappa = \frac{\rho c (\increment x)^2}{2\increment t \, ln(\frac{A_{nah}}
+  {A_{fern}})}
+  \label{eqn:kappa}
+\end{equation}
+mit
+\begin{equation}
+  \increment x = x_{fern} - x_{nah}
+  \label{eqn:deltax}
+\end{equation}
+als Abstand und $\increment t$ als Phasendifferenz zwischen den Messstellen.
+
+
+
+Die Frequenz und Wellenlänge werden durch folgende Formeln bestimmt:
+\begin{equation}
+  f = \frac{1}{T}
+  \label{eqn:Hz}
+\end{equation}
+
+\begin{equation}
+  \lambda = v\, T = \frac{\increment x}{\increment t} T
+  \label{eqn:lambda}
+\end{equation}
+
+
+\subsection{Literaturwerte}
+
+\begin{table}[h]
+  \centering
+  \label{tab:lit}
+  \begin{tabular}{ c c c c }
+    \toprule
+    $Materialien$ & $ \rho \left[\frac{kg}{m^3}\right]$ &
+    c $\left[\frac{J}{kg \, K}\right]$  & $\kappa \left[\frac{W}{m\,K}\right]$
+    \\
+    \midrule
+    $Aluminium$ & 2800 & 830 & 237 \\
+    $Messing$ & 8520 & 385 &  120 \\
+    $Edelstahl$ & 8000 & 400 & 15 \\
+    %$Wasser$ & 0 & 0 & 0 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Literaturwerte \cite{spez} }
+\end{table}
+\newpage
+\subsection{Fehlerrechnung}
+
+Die Mittelwerte werden durch
+\begin{equation}
+  \overline{x} =\frac{1}{N}\sum_{i=1}^{N} x_i
+  \label{eqn:mean}
+\end{equation}
+bestimmt.
+
+Die Standardabweichung wird durch
+\begin{equation}
+  \sigma = \sqrt{\left(\frac{1}{N}\sum_{i=1}^{N}(x_i-\overline{x})^2\right)}
+  \label{eqn:std}
+\end{equation}
+ errechnet.
+ Zudem ergibt sich die Fehlerfortpflanzung aus
+ \begin{equation}
+   \increment y = \sqrt{\sum_{i=1}^{n}\left(\frac{\partial y}{\partial x_i}
+   \increment x_i\right)^2}
+   \label{eqn:gauss}.
+\end{equation}

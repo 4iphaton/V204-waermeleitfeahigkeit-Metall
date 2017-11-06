@@ -96,13 +96,136 @@ All diese Unteschiede lassen sich auf die höhere Wärmeleitfähigkeit
 von Messing zurückführen, durch welche die Wärme die 2. Messstelle
 schneller und effektiver erreicht.
 
-\subsection{Auswetrung der statischen Messung}
-\label{sec:astat}
+\subsection{Auswetrung der dynamischen Messung}
+\label{sec:adyn}
+
+\begin{table}
+  \centering
+  \caption{Messgrößen für Messing.}
+  \label{tab:dQ}
+  \sisetup{table-format=3.2}
+  \begin{tabular}{S[table-format=3.0]S[table-format=3.0]SSSS}
+    \toprule
+    $t_\text{Maxima nah}$ & $t_\text{Maxima fern}$ & $T_\text{Maxima nah}$
+    & $T_\text{Minima nah}$ & $T_\text{Maxima fern}$ & $T_\text{Minima fern}$ \\
+    \si{\second} & \si{\second} & \si{\kelvin}& \si{\kelvin}& \si{\kelvin}& \si{\kelvin}\\
+    \midrule
+     52 &  66 & 312.83 & 304,26 & 307,19 & 305,42 \\
+    136 & 152 & 316,36 & 308,73 & 310,01 & 308,87 \\
+    216 & 232 & 320,69 & 313,05 & 313,82 & 312,72 \\
+    296 & 312 & 324,93 & 316,53 & 317,70 & 316,22 \\
+    382 & 398 & 328,32 & 320,53 & 320,93 & 319,71 \\
+    462 & 476 & 331,94 & 323,77 & 324,30 & 322,85 \\
+    544 & 558 & 335,09 & 326,55 & 327,36 & 325,68 \\
+    628 & 640 & 337,60 & 329,02 & 329,88 & 328,09 \\
+    708 & 722 & 339,66 & 330,90 & 331,97 & 330,01 \\
+    790 & 802 & 341,43 & 332,55 & 333,74 & 331,65 \\
+    872 & 884 & 343,13 & 000,00 & 335,38 & 000,00 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \centering
+  \caption{Messgrößen für Aluminium.}
+  \label{tab:dQ}
+  \sisetup{table-format=3.2}
+  \begin{tabular}{S[table-format=3.0]S[table-format=3.0]SSSS}
+    \toprule
+    $t_\text{Maxima nah}$ & $t_\text{Maxima fern}$ & $T_\text{Maxima nah}$
+    & $T_\text{Minima nah}$ & $T_\text{Maxima fern}$ & $T_\text{Minima fern}$ \\
+    \si{\second} & \si{\second} & \si{\kelvin}& \si{\kelvin}& \si{\kelvin}& \si{\kelvin}\\
+    \midrule
+      50 &  58 & 316,50 & 303,95 & 311,84 & 306,11 \\
+     134 & 142 & 320,98 & 309,27 & 315,58 & 310,96 \\
+     214 & 222 & 325,93 & 314,19 & 320,30 & 315,56 \\
+     294 & 302 & 330,50 & 317,69 & 324,71 & 318,99 \\
+     380 & 388 & 333,75 & 321,87 & 327,83 & 322,97 \\
+     460 & 468 & 337,45 & 325,02 & 331,48 & 326,17 \\
+     542 & 550 & 340,47 & 327,73 & 334,59 & 328,88 \\
+     626 & 632 & 342,80 & 330,05 & 336,92 & 331,18 \\
+     706 & 714 & 344,68 & 331,74 & 338,78 & 332,88 \\
+     788 & 794 & 346,31 & 333,26 & 340,38 & 334,38 \\
+     870 & 878 & 347,84 & 000,00 & 314,95 & 000,00 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
 \begin{figure}
   \includegraphics{build/dyn80.pdf}
+  \caption{Dynamische Messungen für Messing und Aluminium.}
+  \label{fig:dynma}
 \end{figure}
+
+Zunächst werden die Amplituden des Schwingteils der Kurven
+berechnet. Hierzu werden die Werte zweier nebeneinander liegender
+Maxima gemittelt und der Wert des dazwischen liegenden Maximums wird
+abgezogen. Dies wird für alle Maxima der jeweiligen Graphen getan.
+Die Amplituden je eines Graphen, sowie die Phasendifferenzen, werden anschließend nach
+\eqref{eqn:mean} gemittelt und nach \eqref{eqn:std} mit einem
+Fehler versehen. Es ergeben sich die folgenden Werte
+
+\begin{align*}
+  A_\text{nah, Messing} &= \SI{9,81(22)}{\kelvin} & A_\text{fern, Messing} &= \SI{2,98(11)}{\kelvin}\\
+  A_\text{nah, Aluminium} &= \SI{14,03(33)}{\kelvin} & A_\text{fern, Aluminium} &= \SI{6,94(28)}{\kelvin}\\
+  \increment t_\text{Messing} &= \SI{14,18(159)}{\second} & \increment t_\text{Aluminium} &= \SI{7,64(77)}{\second}
+\end{align*}
+
+aus \eqref{eqn:Hz} und \eqref{eqn:lambda} ergeben sich
+
+\begin{align*}
+  f_\text{Messing} &= \SI{0,0122(3)}{\hertz} & \lambda_\text{Messing} &= \SI{0,1752(200)}{\meter}\\
+  f_\text{Aluminium} &= \SI{0,0122(3)}{\hertz} & \lambda_\text{Aluminium} &= \SI{0,3254(338)}{\meter}
+\end{align*}
+Mit den Fehlern über \eqref{eqn:gauss}, \eqref{eqn:gaußf} und \eqref{eqn:gaußl}
+\begin{align}
+  \sigma_\symup{f}&=\left|\frac{-1}{T^2}\sigma_\symup{T}\right|
+  \label{eqn:gaußf}\\
+  \sigma_\symup{\lambda}&=\sqrt{\left(\frac{\increment x}{\increment t}\sigma_\symup{T}\right)^{\!\!2}
+    +\left(\frac{-\increment x}{\left(\increment t\right)^{\!2}}T\sigma_\text{\increment t}\right)^{\!\!2}}
+  \label{eqn:gaußl}
+\end{align}
+\begin{equation*}
+    \sigma_\symup{\kappa} = \sqrt{
+    \left(\frac{-\rho c\left(\increment x\right)^{\!2}}{2\left(\increment t\right)^{\!2}\ln{\frac{A_\text{nah}}{A_\text{fern}}}}\sigma_\text{\increment t}\right)^{\!\!2}
+    +\left(\frac{-\rho c\left(\increment x\right)^{\!2}}{2 \increment t A_\text{nah}\left(\left(\ln{A_\text{nah}}\right)^{\!2}-\ln{A_\text{fern}}\right)}\sigma_\text{A,nah}\right)^{\!\!2}}\\
+\end{equation*}
+\begin{equation}
+  \overline{+\left(\frac{-\rho c\left(\increment x\right)^{\!2}}{2 \increment t A_\text{fern}\left(\ln{A_\text{nah}}-\left(\ln{A_\text{fern}}\right)^{\!2}\right)}\sigma_\text{A,fern}\right)^{\!\!2}}
+  \label{gaußk}
+\end{equation}
+und der gemittelten Periodendauer $T$. Im folgenden wird die Wärmeleitfähigkeit $\kappa$ über \eqref{eqn:kappa}
+mit dem Fehler \eqref{gaußk} berechnet und es ergibt sich.
+
+\begin{align*}
+  \kappa_\text{Messing} &= \SI{89,04(1044)}{\watt\per\meter\per\kelvin}\\
+  \kappa_\text{Aluminium} &= \SI{198,47(2400)}{\watt\per\meter\per\kelvin}
+\end{align*}
+
+\begin{table}
+  \centering
+  \caption{Messgrößen für Edelstahl.}
+  \label{tab:dQ}
+  \sisetup{table-format=3.2}
+  \begin{tabular}{S[table-format=4.0]S[table-format=4.0]SSSS}
+    \toprule
+    $t_\text{Maxima nah}$ & $t_\text{Maxima fern}$ & $T_\text{Maxima nah}$
+    & $T_\text{Minima nah}$ & $T_\text{Maxima fern}$ & $T_\text{Minima fern}$ \\
+    \si{\second} & \si{\second} & \si{\kelvin}& \si{\kelvin}& \si{\kelvin}& \si{\kelvin}\\
+    \midrule
+    116  &  180 & 316,76 & 304,86 & 305,05 & 304,43 \\
+    318  &  396 & 324,75 & 312,49 & 309,01 & 308,70 \\
+    520  &  596 & 331,19 & 318,18 & 313,36 & 312,98 \\
+    720  &  788 & 335,76 & 322,25 & 317,11 & 316,53 \\
+    918  &  986 & 339,07 & 325,16 & 320,13 & 319,28 \\
+    1118 & 1178 & 341,63 & 327,02 & 322,56 & 312,36 \\
+    1324 & 1384 & 343,42 & 000,00 & 324,43 & 000,00 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
 \begin{figure}
   \includegraphics{build/dyn200.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+  \caption{Dynamische Messung für Edelstahl.}
+  \label{fig:dyne}
 \end{figure}

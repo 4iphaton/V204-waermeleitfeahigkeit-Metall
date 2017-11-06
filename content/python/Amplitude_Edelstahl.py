@@ -109,3 +109,6 @@ print('Phase der Kurven: {0:.2f}'.format(pht),'s')
 def kappa(roh,c,dx,dt,Ab,Aub):
     return roh*c*(dx**2)/(2*dt*(unp.log(Ab)-unp.log(Aub)))
 print('Die Wärmeleitfähigkeit beträgt: {0:.2f}'.format(kappa(8000,400,0.0303,pht,amp2,amp1)),'W/(mK)')
+print('Frequenz: {0:.4}'.format(1/(dt2)),'Hz Wellenlänge: {0:.4f}'.format(0.0303*dt2/(pht)),'m')
+
+print(T2max, T2min,T1max,T1min, t1max, t2max)
