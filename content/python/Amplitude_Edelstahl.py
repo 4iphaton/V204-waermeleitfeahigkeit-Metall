@@ -3,6 +3,7 @@
 import numpy as np
 import scipy.constants as const
 from uncertainties import ufloat
+from uncertainties import unumpy as unp
 import math
 
 t,T7,T8 = np.genfromtxt('../../content/values/messungdyn200s_val.txt',unpack=True)
@@ -104,3 +105,7 @@ pht = ufloat(np.mean(pht),np.std(pht))
 print('Periodendauer der unbeheitzten Kurve: {0:.2f}'.format(dt1),'s')
 print('Periodendauer der beheitzten Kurve: {0:.2f}'.format(dt2),'s')
 print('Phase der Kurven: {0:.2f}'.format(pht),'s')
+
+def kappa(roh,c,dx,dt,Ab,Aub):
+    return roh*c*(dx**2)/(2*dt*(unp.log(Ab)-unp.log(Aub)))
+print('Die Wärmeleitfähigkeit beträgt: {0:.2f}'.format(kappa(8000,400,0.0303,pht,amp2,amp1)),'W/(mK)')
